@@ -1,0 +1,66 @@
+<openerp>
+    <data>
+        
+        <template id="form_upload" name="Upload Template">
+          <t t-call="website.layout">
+
+          <form action="/upload/" method="post" data-success_page="" enctype="multipart/form-data" >
+
+
+            <div class="container" style="width:40%;margin-top:5%;">
+              <div class="panel panel-default" style="text-align:center;">
+                
+                <div class="panel-body">
+
+                  <!-- Standar Form -->
+                  <h4>Select files from your computer</h4>
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <input type="file" name="fichier"  />
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                      </div>
+                      
+                    </div>
+                  
+                </div>
+                <div class="panel-footer" style="text-align:center;"><strong><h4>E-mail</h4> <input type="email" name="email" class="form-control"/></strong>
+                <div style="padding-top:15px;">
+                <button type="submit" class="btn btn-sm btn-primary">Envoyer</button>
+                </div>
+              </div>
+              </div>
+            </div> <!-- /container -->
+
+         </form>
+         
+
+
+
+
+
+
+
+
+
+
+
+          
+        <!--   <div class="panel panel-default">
+        <div class="panel-body">
+          <t t-if="id">
+            <h1><t t-esc="id"/> is ulpoaded successfully</h1>
+          </t>
+
+          <form action="/upload/" method="post" data-success_page="" enctype="multipart/form-data" >
+            <input type="file" name="fichier"/>
+             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <input type="submit" value="Upload"/>
+          </form>
+        </div>
+        </div> -->
+             </t>
+        </template>
+
+
+    </data>
+</openerp>
